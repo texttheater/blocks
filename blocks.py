@@ -21,6 +21,8 @@ def read(io: TextIO) -> Iterable[Block]:
     for line in io:
         line, = line.splitlines()
         if line:
+            current_block.append(line)
+        else:
             yield current_block
             current_block = []
     if current_block:
