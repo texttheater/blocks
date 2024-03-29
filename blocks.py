@@ -17,7 +17,7 @@ Block = list[Line]
 
 
 def read(io: TextIO) -> Iterable[Block]:
-    current_block = []
+    current_block: Block = []
     for line in io:
         line, = line.splitlines()
         if line:
